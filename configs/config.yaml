@@ -1,0 +1,36 @@
+server:
+  addr: ":8080"
+  read_timeout: 15s
+  write_timeout: 15s
+  shutdown_timeout: 30s
+  request_timeout: 10s
+
+database:
+  dsn: "postgres://postgres:postgres@localhost:5432/gox?sslmode=disable"
+  max_conns: 25
+  min_conns: 2
+  max_conn_lifetime: 1h
+  conn_timeout: 5s
+
+redis:
+  addr: "localhost:6379"
+  password: ""
+  db: 0
+  dial_timeout: 3s
+  read_timeout: 3s
+  write_timeout: 3s
+
+jwt:
+  secret: "change-me-in-production-use-long-random-string"
+  access_ttl: 15m
+  refresh_ttl: 168h
+  issuer: "gox-boilerplate"
+  blacklist_ttl: 168h
+
+rabbitmq:
+  url: "amqp://guest:guest@localhost:5672/"
+  prefetch_count: 10
+  reconnect_wait: 2s
+
+worker:
+  mail_queue_name: "mail.jobs"

@@ -1,0 +1,7 @@
+logs/
+coverage.out
+coverage.html
+bin/
+
+# SQLC generated files are intentionally not committed.
+internal/repository/sqlc/*.go
